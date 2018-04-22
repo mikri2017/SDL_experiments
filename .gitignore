@@ -2,5 +2,6 @@
 *.exe
 *.o
 *.depend
-/SDL_PingPong/*.layout
+*.layout
 /SDL_PingPong/bin
+/SDL_CharacterCtrlAnimation/bin
