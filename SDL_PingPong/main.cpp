@@ -1,8 +1,10 @@
 /*
-    Рыжков Михаил, Пинг-Понг на SDL
+    Р С‹Р¶РєРѕРІ РњРёС…Р°РёР», РџРёРЅРі-РџРѕРЅРі РЅР° SDL
  */
 
 #include <iostream>
+#include <chrono>
+#include <thread>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_mouse.h>
 #include <SDL2/SDL_keyboard.h>
@@ -45,6 +47,7 @@ void updateScreen(SDL_Renderer* renderer)
     ScrObjMngr.PrepareScreen(renderer);
     ScrObjMngr.GoNextStep();
     SDL_RenderPresent(renderer);
+    std::this_thread::sleep_for(std::chrono::milliseconds(50));
 }
 
 int main( int argc, char* args[] )
@@ -52,13 +55,13 @@ int main( int argc, char* args[] )
 	SDL_Window* window = NULL;
 	SDL_Renderer* renderer = NULL;
 
-	// Инициализация SDL
+	// РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ SDL
 	if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
 		std::cout << "SDL could not initialize! SDL_Error: " << SDL_GetError() << std::endl;
 	else
 	{
 	    std::cout << "Press Esc button to Exit!\n";
-		// Создаем окно
+		// РЎРѕР·РґР°РµРј РѕРєРЅРѕ
 		window = SDL_CreateWindow( "SDL PingPong by MIKRI (Press Esc for Exit)", SDL_WINDOWPOS_UNDEFINED,
                             SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT,
                             SDL_WINDOW_SHOWN );
@@ -73,8 +76,8 @@ int main( int argc, char* args[] )
         }
 	}
 
-	SDL_DestroyWindow( window ); // Уничтожаем окно
-	SDL_Quit(); //Выход из SDL
+	SDL_DestroyWindow( window ); // РЈРЅРёС‡С‚РѕР¶Р°РµРј РѕРєРЅРѕ
+	SDL_Quit(); //Р’С‹С…РѕРґ РёР· SDL
 
 	return 0;
 }
