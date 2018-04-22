@@ -1,7 +1,9 @@
 #ifndef RECTS_H_INCLUDED
 #define RECTS_H_INCLUDED
 
-#include <SDL.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_render.h>
+#include <SDL2/SDL_events.h>
 
 class Rects
 {

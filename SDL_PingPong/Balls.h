@@ -1,7 +1,9 @@
 #ifndef BALLS_H_INCLUDED
 #define BALLS_H_INCLUDED
 
-#include <SDL.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_render.h>
+#include <SDL2/SDL_events.h>
 #include <ctime>
 #include <stdlib.h>
 #include <math.h>
