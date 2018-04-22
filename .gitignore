@@ -3,3 +3,4 @@
 *.o
 *.depend
 /SDL_PingPong/*.layout
+/SDL_PingPong/bin
