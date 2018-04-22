@@ -2,10 +2,13 @@
 #include <math.h>
 #include <stdlib.h>
 #include <ctime>
+#include <chrono>
+#include <thread>
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_render.h>
+#include <SDL2/SDL_events.h>
 #include <SDL2/SDL_mouse.h>
 #include <SDL2/SDL_keyboard.h>
-#include <windows.h>
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
@@ -87,14 +90,6 @@ char cloud[6][12] = {
     ' ','*','*','*','*','*','*','*','*','*','*',' ',
     ' ',' ',' ','*','*','*','*','*','*',' ',' ',' '
 };
-
-char bufRus[256];
-
-char* Rus(const char* text)
-{
-    CharToOem(text, bufRus);
-    return bufRus;
-}
 
 int xStart, cloudStart;
 
@@ -259,6 +254,7 @@ void updateScreen(SDL_Renderer* renderer,int width, int height)
             SDL_RenderPresent(renderer);
         }
     }
+    std::this_thread::sleep_for(std::chrono::milliseconds(50));
 }
 
 void getXandYNextStep(int &x, int &y, bool first)
