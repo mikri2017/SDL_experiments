@@ -3,8 +3,6 @@
  */
 
 #include <iostream>
-#include <chrono>
-#include <thread>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_mouse.h>
 #include <SDL2/SDL_keyboard.h>
@@ -47,7 +45,7 @@ void updateScreen(SDL_Renderer* renderer)
     ScrObjMngr.PrepareScreen(renderer);
     ScrObjMngr.GoNextStep();
     SDL_RenderPresent(renderer);
-    std::this_thread::sleep_for(std::chrono::milliseconds(50));
+    SDL_Delay(50);
 }
 
 int main( int argc, char* args[] )
